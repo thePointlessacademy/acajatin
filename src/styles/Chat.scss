@@ -1,0 +1,254 @@
+@import "mixins";
+
+.chat {
+  margin-bottom: 124px;
+  &__text {
+    border: 0.5px solid #000000;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-family: Clash-Regular;
+    font-size: 12px;
+
+    &-heading {
+      font-family: Clash-Medium;
+      font-size: 32px;
+    }
+
+    &-name {
+      font-family: Clash-Medium;
+      font-size: 20px;
+      background: black;
+      color: white;
+      border-radius: 100%;
+      width: 30px;
+      height: 30px;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &-time {
+      font-family: Clash-Medium;
+      font-size: 8px;
+      color: rgba(28, 28, 28, 0.6);
+    }
+  }
+
+  &__selectedImage {
+    background: white;
+    max-height: 106px;
+    border-bottom: 0.4px solid #1c1c1c;
+    border-radius: 10px 10px 0px 0px;
+    padding: 16px;
+    position: relative;
+
+    &-cross {
+      position: absolute;
+      top: 4px;
+      margin-left: -4px;
+      cursor: pointer;
+    }
+
+    &-img {
+      max-height: 75px;
+      cursor: pointer;
+    }
+  }
+
+  &__header {
+    @include flex-row();
+    justify-content: space-between;
+    align-items: center;
+    background: #1c1c1c;
+    border-radius: 10px 10px 0px 0px;
+    padding: 28px 36px;
+  }
+
+  &__details {
+    @include flex-row();
+    gap: 24px;
+    align-items: flex-end;
+    margin-top: 14px;
+    z-index: 1;
+
+    &-people {
+      position: relative;
+
+      p {
+        font-family: Clash-Medium;
+        font-size: 20px;
+        background: white;
+        border-radius: 100%;
+        width: 30px;
+        height: 30px;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+
+    &-items {
+      position: absolute;
+      border: 1px solid white;
+      border-radius: 100%;
+      width: 30px;
+      height: 30px;
+      top: 0;
+      z-index: -5;
+
+      &-first {
+        left: 6px;
+      }
+      &-second {
+        left: 14px;
+      }
+    }
+  }
+
+  &__main {
+    background: #ebe7e2;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 0px 0px 10px 10px;
+    padding: 18px 42px;
+    height: 650px;
+    @include flex-column();
+    justify-content: space-between;
+    position: relative;
+  }
+
+  &__allChats {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    height: 100%;
+    overflow-y: scroll;
+    gap: 10px;
+    padding-right: 10px;
+    margin-bottom: 18px;
+  }
+
+  &__inputContainer {
+    position: relative;
+    background: #ffffff;
+    @include flex-row();
+    justify-content: space-between;
+
+    &-imageSelectedBorder {
+      border-radius: 0px 0px 10px 10px;
+    }
+
+    &-NoImageSelectedBorder {
+      border-radius: 10px;
+    }
+
+    img {
+      padding: 16px 12px;
+      cursor: pointer;
+    }
+
+    input {
+      border: none;
+      outline: none;
+      width: 100%;
+      font-family: Clash-Regular;
+      font-size: 16px;
+    }
+  }
+
+  &__conversation {
+    display: flex;
+    gap: 10px;
+
+    &-mytext {
+      flex-direction: row-reverse;
+    }
+
+    &-othertext {
+      flex-direction: row;
+    }
+
+    div {
+      @include flex-column();
+      gap: 2px;
+    }
+  }
+}
+
+.chatimg {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: rgba(28, 28, 28, 0.95);
+  margin: -18px -42px;
+  z-index: 5;
+  padding: 9px 50px 54px 50px;
+
+  &__header {
+    @include flex-row();
+    justify-content: space-between;
+  }
+
+  &__nameInit {
+    font-family: Clash-Medium;
+    font-size: 18px;
+    height: 25px;
+    width: 25px;
+    border-radius: 100%;
+
+    padding: 1px 6px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background: #1a1a1a;
+  }
+
+  &__close {
+    cursor: pointer;
+  }
+
+  &__download {
+    @include flex-row();
+    justify-content: flex-end;
+  }
+
+  &__img {
+    @include flex-center();
+
+    img {
+      max-height: 550px;
+    }
+  }
+
+  &__details {
+    @include flex-row();
+    gap: 10px;
+  }
+
+  &__header {
+    @include flex-row();
+    gap: 10px;
+    align-items: center;
+  }
+
+  &__name {
+    @include flex-column();
+  }
+
+  &__text {
+    font-family: Clash-Medium;
+    font-size: 14px;
+  }
+
+  &__time {
+    font-family: Clash-Regular;
+    font-size: 14px;
+  }
+}
+
+.white {
+  color: white;
+}
+
+.align-self-end {
+  align-self: flex-end;
+}

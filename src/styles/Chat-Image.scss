@@ -1,0 +1,10 @@
+@import "mixins";
+
+.chatimg {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: rgba(28, 28, 28, 0.95);
+  margin: -18px -42px;
+  z-index: 5;
+}

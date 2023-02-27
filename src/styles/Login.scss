@@ -1,0 +1,74 @@
+@import "mixins";
+
+.login {
+  @include flex-row();
+  align-items: center;
+  justify-content: space-between;
+
+  &__left {
+    max-width: 480px;
+  }
+
+  &__wrapper {
+    margin: 0 auto;
+    background: #080808;
+    // height: 100vh;
+  }
+
+  &__container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 48px;
+  }
+
+  &__video {
+    max-width: 627px;
+    max-height: 810px;
+    border-radius: 10px;
+    margin-bottom: 32px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+  }
+
+  &__text {
+    font-family: Clash-Medium;
+    font-size: 12px;
+
+    &-heading {
+      font-family: Clash-Semibold;
+      font-size: 40px;
+    }
+  }
+
+  &__btnContainer {
+    @include flex-column();
+    max-width: 355px;
+    gap: 16px;
+    margin-top: 36px;
+    margin-bottom: 36px;
+  }
+
+  &__button {
+    background: #1a1a1a;
+    border: 1px solid #ffffff;
+    border-radius: 10px;
+    font-family: Clash-Medium;
+    font-size: 15px;
+    color: white;
+    @include flex-row();
+    align-items: center;
+    padding: 16px 20px;
+    gap: 46px;
+    cursor: pointer;
+
+    &-container {
+      display: flex;
+      align-items: center;
+      @include flex-row();
+      gap: 10px;
+    }
+  }
+}
+
+.white {
+  color: #fff;
+}

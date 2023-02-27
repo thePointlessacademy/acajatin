@@ -1,0 +1,59 @@
+@import "mixins";
+
+.live {
+  @include flex-column();
+  border-top: 1px solid rgba(191, 188, 183, 0.9);
+  padding-top: 20px;
+  margin-top: 20px;
+
+  &__item {
+    padding: 16px 24px;
+    background: #ebe7e2;
+    border:1px solid rgba(191, 188, 183, 0.9);
+    border-radius: 10px;
+  }
+
+  &__text {
+    &-heading {
+      font-family: Clash-Regular;
+      font-size: 18px;
+      margin-top: 5px;
+    }
+
+    &-subHeading {
+      font-family: Clash-Medium;
+      font-size: 15px;
+      color: rgba(28, 28, 28, 0.6);
+    }
+  }
+
+  &__livenow {
+    @include flex-row();
+    gap: 2px;
+    align-items: center;
+
+    p {
+      font-family: Clash-Medium;
+      font-size: 12px;
+    }
+  }
+
+  &__links {
+    margin-top: 30px;
+    @include flex-row();
+    gap: 20px;
+
+    &-item {
+      @include flex-row();
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+
+      p {
+        font-family: Clash-Medium;
+        color: rgba(28, 28, 28, 100);
+        text-decoration: none;
+      }
+    }
+  }
+}

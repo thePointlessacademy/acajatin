@@ -1,0 +1,140 @@
+$hdlargedesktop: "(min-width: 1600px)";
+$largedesktop: "(min-width: 1441px)";
+$desktop: "(min-width: 1025px) and (max-width: 1440px)";
+$tablet: "(min-width: 767px) and (max-width: 1024px)";
+$mobile: "(max-width: 766px)";
+
+@mixin mobile {
+  @media only screen and #{$mobile} {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media only screen and #{$tablet} {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media only screen and #{$desktop} {
+    @content;
+  }
+}
+
+@mixin largedesktop {
+  @media only screen and #{$largedesktop} {
+    @content;
+  }
+}
+
+@mixin screen($keys...) {
+  @each $key in $keys {
+    @if ($key == mobile) {
+      @include mobile {
+        @content;
+      }
+    } @else if ($key == tablet) {
+      @include tablet {
+        @content;
+      }
+    } @else if ($key == desktop) {
+      @include desktop {
+        @content;
+      }
+    } @else if ($key == largedesktop) {
+      @include largedesktop {
+        @content;
+      }
+    }
+  }
+}
+
+// Centering a block
+@mixin center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// flex Box
+@mixin flexbox {
+  display: -webkit-box; // old
+  display: -moz-box; // old
+  display: -ms-flexbox; // ie
+  display: -webkit-flex; // new
+  display: flex; // new
+}
+
+@mixin flex-direction($direction) {
+  @if $direction == column {
+    -webkit-flex-direction: vertical;
+    -moz-flex-direction: vertical;
+    -ms-flex-direction: column;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  } @else {
+    -webkit-flex-direction: horizontal;
+    -moz-flex-direction: horizontal;
+    -ms-flex-direction: row;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+  }
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-column {
+  @include flexbox();
+  @include flex-direction(column);
+}
+
+@mixin flex-row {
+  @include flexbox();
+  @include flex-direction(row);
+}
+
+// Font style
+@mixin font($fontStyle) {
+  margin: 0;
+  padding: 0;
+  @if $fontStyle == regular {
+    font-family: montserrat-regular, inter-semibold;
+  } @else if $fontStyle == bold {
+    font-family: montserrat-semibold, inter-semibold;
+  } @else if $fontStyle == medium {
+    font-family: montserrat-medium, inter-medium;
+  }
+}
+
+// Wrapper
+@mixin wrapper() {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+// Container
+@mixin container() {
+  border: 1px solid black;
+  border-radius: 10px;
+
+  @include screen(largedesktop) {
+    margin: 114px 64px 74px 64px;
+  }
+  @include screen(desktop) {
+    margin: 114px 64px 74px 64px;
+  }
+  @include screen(tablet) {
+    min-height: calc(100vh - 114px - 122px - 2px);
+    margin: 114px 36px 122px 36px;
+  }
+  @include screen(mobile) {
+    min-height: calc(100vh - 114px);
+    margin: 114px 32px 0px 32px;
+    border: none;
+  }
+}

@@ -1,0 +1,38 @@
+@import "mixins";
+
+.wrapper {
+  @include wrapper();
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.dashboard {
+  margin-bottom: 124px;
+  &__main {
+   // margin-top: 42px;//
+    @include flex-row();
+    gap: 203px;
+    width: 100%;
+
+    &-right {
+      @include flex-column();
+      gap: 72px;
+      width: 520px;
+    }
+  }
+
+  &__text {
+    &-heading {
+      font-family: Clash-Regular;
+      font-size: 64px;
+    }
+
+    &-subheading {
+      font-family: Clash-Regular;
+      font-size: 28px;
+    }
+  }
+}

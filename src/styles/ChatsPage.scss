@@ -1,0 +1,12 @@
+@import "mixins";
+
+.chats {
+  &__main {
+    @include flex-row();
+    gap: 24px;
+  }
+
+  &__chat {
+    width: 100%;
+  }
+}

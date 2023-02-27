@@ -1,0 +1,78 @@
+@import "mixins";
+
+.groups {
+  border: 1px solid rgba(191, 188, 183, 0.9);
+  border-radius: 10px;
+  max-width: 486px;
+  cursor: pointer;
+
+  &__thumbnail {
+    width: 100%;
+    height: auto;
+    max-width: 486px;
+    max-height: 89px;
+  }
+
+  &__main {
+    padding: 18px 32px;
+  }
+
+  &__text {
+    &-heading {
+      font-family: Clash-Regular;
+      font-size: 32px;
+      border-bottom: 1px solid rgba(191, 188, 183, 0.9);
+      padding-bottom: 11px;
+    }
+
+    &-members {
+      font-family: Clash-Regular;
+      font-size: 14px;
+    }
+  }
+
+  &__details {
+    @include flex-row();
+    gap: 24px;
+    align-items: flex-end;
+    margin-top: 14px;
+
+    &-people {
+      position: relative;
+
+      p {
+        font-family: Clash-Regular;
+        font-size: 20px;
+        background: #1c1c1c;
+        border-radius: 100%;
+        width: 30px;
+        height: 30px;
+        color: white;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+
+    &-items {
+      position: absolute;
+      border: 1px solid #1c1c1c;
+      border-radius: 100%;
+      width: 30px;
+      height: 30px;
+      top: 0;
+      z-index: -5;
+
+      &-first {
+        left: 6px;
+      }
+      &-second {
+        left: 14px;
+      }
+    }
+  }
+}
+
+.mt-20 {
+  margin-top: 20px;
+}

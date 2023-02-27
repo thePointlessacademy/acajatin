@@ -1,0 +1,47 @@
+@import "mixins";
+
+.fixed {
+  position: fixed;
+  bottom: 0%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #1c1c1c;
+  border-radius: 15px;
+  padding: 13px 28px;
+  @include flex-row();
+  gap: 40px;
+  z-index: 20;
+
+  &__icons {
+    @include flex-row();
+    gap: 21px;
+  }
+
+  &__separator {
+    border-left: 1px solid #ffffff;
+  }
+
+  &__input {
+    background: #1a1a1a;
+    border: 0.5px solid #ffffff;
+    border-radius: 10px;
+    @include flex-row();
+    align-items: center;
+    position: relative;
+
+    img {
+      padding: 10px 0px 10px 14px;
+    }
+
+    input {
+      height: 100%;
+      padding: 10px 14px;
+      border: none;
+      outline: none;
+      background: transparent;
+
+      font-family: Clash-Medium;
+      color: #fff;
+    }
+  }
+}

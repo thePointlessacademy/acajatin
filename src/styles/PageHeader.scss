@@ -1,0 +1,27 @@
+@import "mixins";
+
+.header {
+  @include flex-row();
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(191, 188, 183, 0.9);
+  margin-bottom: 20px;
+  height: 70.8px;
+}
+
+
+.btn {
+  padding: 12px 32px;
+  //fill: solid #1c1c1c;//
+  border-radius: 8px;
+  font-family: Clash-Medium;
+  font-size: 16px;
+  color: white;
+  background-color: #1c1c1c;
+  cursor: pointer;
+}
+
+.heading {
+  font-family: Clash-Medium;
+  font-size: 40px;
+}

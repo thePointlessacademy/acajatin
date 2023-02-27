@@ -1,0 +1,23 @@
+#scroll {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* card styles */
+.colored-card {
+  min-height: 20rem;
+  border: 1px solid #acabab;
+}
+.spacer {
+  margin-bottom: 150px;
+}
+.r-col {
+  background: #acabab url("https://placekitten.com/500/500") no-repeat center;
+  background-size: cover;
+}
+.l-col {
+  background: #fff;
+  padding: 40px;
+}
